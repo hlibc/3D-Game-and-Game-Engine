@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"> <pre>
+<br clear="left"/></pre><dl><br clear="left"/></pre><dl><strong>cube-zero</strong></dl><pre></dl><pre>
+
+
+<br clear="left"/></pre><dl><br clear="left"/></pre><dl><strong>Description:</strong></dl><pre></dl><pre>
+</pre><dd><hr/></dd><pre>
+
+	3D video game and game engine.
+
+	Battle in single player mode fighting alongside the Hellknight.
+	Together you must rid grafland's wild frontier of hopping 2 legged 
+	pragma spawns. In order to do this you may have to battle until your 
+	alliance is lost! Or you may choose to edit a new reality and create a 
+	structure with which to defend yourselves from the ever encroaching 
+	pragmas and the evil they represent.
+
+	Image of cube-zero's gameplay:
+	</pre><dl><img src="scrots/grafcube.png" style="float:left;height:15em;margin-right:1em"></img><pre></dl>
+
+
+<br clear="left"/></pre><dl><br clear="left"/></pre><dl><strong>Technical Description:</strong></dl><pre></dl><pre>
+</pre><dd><hr/></dd><pre>
+	
+	Cube-zero is a (complete) rewrite of the Cube 1 game engine. It focuses
+	on the daunting task of rewriting the game in idiomatic C, removing
+	ancient compiler warnings/incompatibilities and creating new free
+	textures with which to build games. Cube 1 is over 20 years old. 
+	Cube-zero helps to bring it back to life and create a new free building 
+	and learning environment for free software enthusiasts and developers. 
+	Incidently, These changes also allows the game to be sold for commercial
+	gain in its entirety as per its permissive MIT and zlib licensing.
+
+
+<br clear="left"/></pre><dl><br clear="left"/></pre><dl><strong>Changes:</strong></dl><pre></dl><pre>
+</pre><dd><hr/></dd><pre>
+
+	All non-free textures were removed from the package base.
+
+	The enet library is now completely removed from the source code. This
+	dropped 3400 lines, greatly increasing the readability of the project.
+
+	3000 lines of compiler warnings were fixed by researching each warning 
+	and adding the needed changes. No extra compiler flags are used to 
+	suppress these warnings.
+
+	A method for translating and moving code out of the game and into a 
+	seperate C library was established. This code is located under 
+	src/c-game/ and over 1000 lines have been translated to C and put into
+	it.
+
+	Multiplayer modes were removed. This dropped nearly 1000 lines of code 
+	and helped to narrow the game down to its initial intended implementation 
+	of a single player game.
+
+	A model-editor was included with the packages. It's relatively hard to
+	hunt down a model editor that will edit the old quake md2 player models
+	so the inclusion of the editor helps to solidify the project and ensure
+	significant future changes.
+
+
+<br clear="left"/></pre><dl><br clear="left"/></pre><dl><strong>Model Editor:</strong></dl><pre></dl><pre>
+</pre><dd><hr/></dd><pre>
+
+	A free ware version of the Quake MD2 player model editor is included
+	with cube-zero. This program needs to be ran in the WINE windows
+	emulator. It would be nice to replace this with a source code version
+	of Blender3D or mm3d that would run and compile natively on linux.
+
+	To use the model-editor invoke it with `wine'. Here is an example which
+	opens the "hellpig" player model for editing:
+
+		wine model-editor/MDL.EXE packages/models/monster/hellpig/tris.md2
+
+	You will need to have the WINE windows emulator installed. If you are
+	using a debian or ubuntu based distro it can be installed with:
+
+		sudo apt-get install wine
+
+	To edit the model wire frame click the tab labeled "C" and then click
+	"build face". At this point you should be able to click and drag to
+	modify the player model. 
+	
+	An image of the editor in use:
+	</pre><dl><img src="scrots/model-editor.png" style="float:left;height:15em;margin-right:1em"></img><pre></dl>
+
+
+<br clear="left"/></pre><dl><br clear="left"/></pre><dl><strong>Building:</strong></dl><pre></dl><pre>
+</pre><dd><hr/></dd><pre>
+
+	On a Unix-like system invoke `make' in the main directory.
+
+		make 
+
+	Legacy systems are not supported.
+
+	Several development headers are required. If you are using a 
+	debian or ubuntu system you can install a partial list of them 
+	using:
+
+		sudo apt-get install libsdl1.2-dev \
+			libsdl-mixer1.2-dev xorg-dev
+
+
+<br clear="left"/></pre><dl><br clear="left"/></pre><dl><strong>Run the game:</strong></dl><pre></dl><pre>
+</pre><dd><hr/></dd><pre>
+
+	make run
+
+		or
+
+	./bin/grafcube -t
+
+		or fullscreen mode:
+
+	./bin/grafcube
+
+
+<br clear="left"/></pre><dl><br clear="left"/></pre><dl><strong>Project Goals:</strong></dl><pre></dl><pre>
+</pre><dd><hr/></dd><pre>
+
+	Write as much of the game as possible in C.
+
+	Remove superfluous features.
+
+	Replace all textures with ones gathered from the field.
+
+	Write new music for the game using mainly acoustic cello.
+
+	Create new sound effects, weapons and MD2 objects.
+
+	Create a new MD2 player models with an open source license.
+
+	Remove non-free components.
+
+
+<br clear="left"/></pre><dl><br clear="left"/></pre><dl><strong>Editing:</strong></dl><pre></dl><pre>
+</pre><dd><hr/></dd><pre>
+
+	/waterlevel N	Set water level at N
+
+	/map mapname 	Load a map
+
+	/newmap		Create a new map
+
+	/savemap	Save a map
+
+	insert key	toggle floor textures
+
+	/perlin		Generate terrain automatically
+
+
+<br clear="left"/></pre><dl><br clear="left"/></pre><dl><strong>Website:</strong></dl><pre></dl><pre>
+</pre><dd><hr/></dd><pre>
+
+	<a href="http://www.csit.parkland.edu/~cgraff1/cube-zero">http://www.csit.parkland.edu/~cgraff1/cube-zero</a>
+
+
+<br clear="left"/></pre><dl><br clear="left"/></pre><dl><strong>Revision Control:</strong></dl><pre></dl><pre>
+</pre><dd><hr/></dd><pre>
+
+	<a href="https://github.com/cmgraff/cube-zero">https://github.com/cmgraff/cube-zero</a>
+
+
+<br clear="left"/></pre><dl><br clear="left"/></pre><dl><strong>Contact:</strong></dl><pre></dl><pre>
+</pre><dd><hr/></dd><pre>
+
+	<a href="mailto:cm0graff@gmail.com">cm0graff@gmail.com</a>
+
+
+<br clear="left"/></pre><dl><br clear="left"/></pre><dl><strong>References:</strong></dl><pre></dl><pre>
+</pre><dd><hr/></dd><pre>
+
+	<a href="http://assault.cubers.net/docs/cubeengine.html">http://assault.cubers.net/docs/cubeengine.html</a>
+
+	<a href="https://opengameart.org">https://opengameart.org</a>
+
+
+
+</pre>
